@@ -1,0 +1,79 @@
+/* Import font dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400;500&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif; /* Font utama */
+    margin: 0;
+    padding: 40px 0; /* Jarak dari atas */
+    min-height: 100vh;
+    background: #f0f4ff url('cube.jpg'); /* Background warna + gambar */
+    display: block; 
+    text-align: center; /* Isi rata tengah horizontal */
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif; /* Font khusus judul */
+    font-size: 22px; /* ukuran font */
+    text-align: center; /* posisi font */
+    margin: 0 auto 20px auto; /* size margin yang digunakan */
+    color: #905700; /* warna yang digunakan */
+    width: 340px; /* ukuran lebar dengan satuan pixel */
+}
+
+.box {
+    width: 340px; 
+    padding: 20px; /* padding yang digunakan */
+    margin: 0 auto; /* margin yang digunakan */
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.95); /* putih transparan */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2); /* bayangan */
+}
+
+label {
+    font-weight: 500; 
+    margin-top: 12px; 
+    display: block;
+    color: #444; /* warna yang digunakan */
+}
+
+input, select {
+    display: block;
+    margin: 10px auto; /* ukuran margin yang digunakan */
+    padding: 8px; 
+    width: 90%;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif; /* jenis huruf yang digunakan */
+    box-sizing: border-box;
+}
+
+button {
+    margin-top: 15px; /* ukuran margin atas yang digunakan */
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    background: linear-gradient(135deg, #4CAF50, #2ecc71);
+    color: white; /* warna yang digunakan */
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    transition: 0.3s;
+    font-family: 'Poppins', sans-serif; /* jenis font yang digunakan */
+}
+
+button:hover {
+    background: linear-gradient(135deg, #45a049, #27ae60);
+    transform: scale(1.02); /* sedikit membesar saat hover */
+}
+
+#hasil {
+    margin-top: 18px; /* ukurna margin atas yang digunakan */
+    font-weight: bold;
+    text-align: center; /* menggunakan rata tengah */
+    color: #222; /* warna yang digunakan */
+    font-size: 16px; /* ukuran font yang digunakan */
+    font-family: 'Poppins', sans-serif;
+    opacity: 0; /* awalnya tidak terlihat */
+    transition: opacity 0.6s ease-in-out; /* animasi muncul */
+}
