@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DAYAK NUSANTARA</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header / Navbar -->
+  <header class="nav">
+    <div class="container">
+      <div class="brand">
+        <span class="logo">DAYAK NUSANTARA</span>
+      </div>
+      <nav class="menu">
+        <a href="#beranda" data-link>Beranda</a>
+        <a href="#artikel" data-link>Artikel</a>
+        <a href="#tentang" data-link>Tentang</a>
+        <a href="#login" data-link>Login</a>
+        <div class="search-wrap">
+          <input id="searchInput" type="search" placeholder="Cari artikel..." aria-label="Cari artikel"/>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Buka navigasi">&#9776;</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Beranda -->
+  <main id="app">
+    <section id="beranda" class="section show">
+      <div class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+          <h1>Selamat Datang</h1>
+          <p>Website bertema budaya <strong>Suku Dayak</strong></code>.</p>
+          <a href="#artikel" class="btn" data-link>Jelajahi Artikel</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Artikel -->
+    <section id="artikel" class="section">
+      <div class="container narrow">
+        <h2>Artikel</h2>
+        <p class="muted">Klik salah satu artikel untuk melihat versi lengkapnya. Gunakan kotak pencarian di kanan atas untuk memfilter.</p>
+        <div id="articlesGrid" class="grid"></div>
+        <div id="emptyState" class="empty hidden">Belum ada artikel. Login sebagai Admin untuk menambah artikel.</div>
+      </div>
+    </section>
+
+    <!-- Artikel Detail (SPA modal-like section) -->
+    <section id="artikel-detail" class="section">
+      <div class="container narrow">
+        <button class="link back" id="backToList">&larr; Kembali ke daftar</button>
+        <article id="detailContent" class="card article-full"></article>
+      </div>
+    </section>
+
+    <!-- Tentang -->
+    <section id="tentang" class="section">
+      <div class="container narrow">
+        <h2>Tentang Pengembang</h2>
+        <div class="grid two">
+          <div class="card">
+            <h3>Developer 1</h3>
+            <ul class="contact">
+              <li><strong>Email:</strong> <a href="mailto:dev1@example.com">gerald@example.com</a></li>
+              <li><strong>Telepon:</strong> <a href="tel:+6281234567890">+62 812-3456-7890</a></li>
+              <li><strong>Instagram:</strong> <a href="https://instagram.com/dev1" target="_blank">@gerald</a></li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Developer 2</h3>
+            <ul class="contact">
+              <li><strong>Email:</strong> <a href="mailto:dev2@example.com">alvin@example.com</a></li>
+              <li><strong>Telepon:</strong> <a href="tel:+6289876543210">+62 898-7654-3210</a></li>
+              <li><strong>Instagram:</strong> <a href="https://instagram.com/dev2" target="_blank">@alvin</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Login -->
+    <section id="login" class="section">
+      <div class="container narrow">
+        <h2>Login</h2>
+        <p class="muted">Pilih peran dan masukkan kredensial sederhana di bawah.</p>
+        <div class="grid two">
+          <form id="loginForm" class="card">
+            <h3>Masuk</h3>
+            <label for="role">Masuk sebagai</label>
+            <select id="role" required>
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </select>
+            <label for="username">Username</label>
+            <input id="username" type="text" placeholder="admin" required/>
+            <label for="password">Password</label>
+            <input id="password" type="password" placeholder="123" required/>
+            <button class="btn" type="submit">Login</button>
+            <div id="loginMsg" class="muted"></div>
+          </form>
+
+          <div id="adminPanel" class="card hidden">
+            <div class="panel-header">
+              <h3>Panel Admin</h3>
+              <button id="logoutBtn" class="btn ghost small">Logout</button>
+            </div>
+            <form id="articleForm" class="stack">
+              <input type="hidden" id="articleId"/>
+              <label>Judul</label>
+              <input id="title" type="text" required/>
+              <label>Deskripsi Singkat</label>
+              <textarea id="excerpt" rows="2" required></textarea>
+              <label>Konten Lengkap</label>
+              <textarea id="content" rows="6" required></textarea>
+              <label>Gambar (opsional)</label>
+              <input id="image" type="file" accept="image/*"/>
+              <div class="row">
+                <button type="submit" class="btn">Simpan</button>
+                <button id="resetForm" type="button" class="btn ghost">Reset</button>
+              </div>
+            </form>
+            <hr/>
+            <h4>Artikel yang Ada</h4>
+            <div id="adminList" class="stack"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span>&copy; <span id="year"></span> Dayak Nusantara</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
